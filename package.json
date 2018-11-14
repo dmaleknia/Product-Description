@@ -17,11 +17,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
     "graphql": "^14.0.2",
     "knex": "^0.15.2",
     "merge": "^1.2.1",
     "mongoose": "^5.3.6",
+    "morgan": "^1.9.1",
     "normalize-port": "^1.0.0",
     "pg": "^7.6.1",
     "react": "^16.6.0",
