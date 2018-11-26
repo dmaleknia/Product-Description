@@ -5,7 +5,7 @@ const path = require('path');
 const database = require('../database/db.js');
 const normalizePort = require('normalize-port');
 
-var port = normalizePort(process.env.PORT || '710');
+var port = normalizePort(process.env.PORT || '7101');
 
 const app = express();
 

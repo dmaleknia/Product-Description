@@ -1,12 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 import Features from './components/Features.jsx';
 import TechSpecs from './components/TechSpecs.jsx';
-import normalizePort from 'normalize-port';
+// import normalizePort from 'normalize-port';
 
-var port = normalizePort(process.env.PORT || '710');
+// var port = normalizePort(process.env.PORT || '7100')
 
 class Productdescriptions extends React.Component {
   constructor() {
@@ -30,7 +30,7 @@ class Productdescriptions extends React.Component {
       // })
     // }else{
         axios
-        .get('http://fectrail-env.k3wc6evxm5.us-east-1.elasticbeanstalk.com/product/data/' + id)
+        .get('/product/data/' + id)
         //.then(res => res.json())
         .then(productData =>{
           var productData = productData.data;
