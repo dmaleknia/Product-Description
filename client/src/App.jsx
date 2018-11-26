@@ -16,8 +16,6 @@ class Productdescriptions extends React.Component {
 
   componentDidMount() {
     let id = window.location.pathname.replace(/\/product\//,'') || 1000;
-    console.log('Here is the id: ', id);
-    // id = 1000;
     axios.get(`/product/data/${id}`)
       .then(productData =>{
         this.setState({
