@@ -7,9 +7,7 @@ const normalizePort = require('normalize-port');
 
 var port = normalizePort(process.env.PORT || '710');
 
-let app = express();
-
-
+const app = express();
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -21,11 +19,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(`${__dirname}/../client/dist`, { maxAge: '365d' }));
 
-
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
-
 
 app.get('/productdescriptions', function (req, res) {
   console.log("GET REQUEST for product descriptions");
@@ -41,7 +37,6 @@ app.get('/productdescriptions', function (req, res) {
 app.get('/product/:productId', function (req, res) {
   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
 });
-
 
 app.get('/product/data/:productId', function (req, res) {
   var productId = req.params.productId;
