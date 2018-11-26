@@ -1,12 +1,9 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 import Features from './components/Features.jsx';
 import TechSpecs from './components/TechSpecs.jsx';
-// import normalizePort from 'normalize-port';
 
-// var port = normalizePort(process.env.PORT || '7100')
 
 class Productdescriptions extends React.Component {
   constructor() {
@@ -20,20 +17,9 @@ class Productdescriptions extends React.Component {
 
   componentDidMount(){
     let id = window.location.pathname.replace(/\/product\//,'');
-    //console.log(id);
-    //if(id){
-      // $.get('/productdescriptions',(data) =>{ //get all the data
-      //   console.log(data[0]);
-      //   this.setState({
-      //     product: data[0]
-      //   })
-      // })
-    // }else{
-        axios
-        .get('/product/data/' + id)
-        //.then(res => res.json())
+      axios.get('/product/data/' + id)
         .then(productData =>{
-          var productData = productData.data;
+          let productData = productData.data;
           this.setState({
             product: productData
           })
@@ -41,7 +27,6 @@ class Productdescriptions extends React.Component {
         .catch(err => {
           console.log("Error with server side fetch request",err);
         })
-    //}
   }
   changeView(){
     if(this.state.view === "Features"){
@@ -78,9 +63,5 @@ class Productdescriptions extends React.Component {
     );
   }
 }
-
-
-
-//ReactDOM.render(< Productdescriptions />, document.getElementById('productDescriptions'));
 
 export default Productdescriptions;

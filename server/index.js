@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-//const = require('../database/.js');
 const database = require('../database/db.js');
 const normalizePort = require('normalize-port');
 
@@ -20,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(`${__dirname}/../client/dist`, { maxAge: '365d' }));
 
 app.listen(port, function() {
-  console.log(`listening on port ${port}`);
+  console.log(`App listening on port ${port}`);
 });
 
 app.get('/productdescriptions', function (req, res) {
@@ -40,13 +39,12 @@ app.get('/product/:productId', function (req, res) {
 
 app.get('/product/data/:productId', function (req, res) {
   var productId = req.params.productId;
-  console.log(`GET REQUEST for product Id ${productId}`);
+  console.log(`GET REQUEST for product ${productId}`);
   database.findOne({productId: productId}, (err, productData) => {
-    if(err){
+    if(err) {
       console.log("ERROR:", err);
-    }else{
-      console.log("GOT DATA");
-      //console.log(productData);
+    } else {
+      console.log("SUCCESS");
       res.status(200).send(productData);
     }
   });
