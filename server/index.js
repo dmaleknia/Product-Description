@@ -4,7 +4,7 @@ const path = require('path');
 const database = require('../database/db.js');
 const normalizePort = require('normalize-port');
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 
 const app = express();
 
@@ -25,9 +25,9 @@ app.listen(port, function() {
 app.get('/productdescriptions', function (req, res) {
   console.log("GET REQUEST for product descriptions");
   database.find({}, (err, data) => {
-    if(err){
+    if(err) {
       console.log("ERROR:", err);
-    }else{
+    } else{
       res.status(200).send(data);
     }
   });
@@ -41,7 +41,7 @@ app.get('/product/data/:productId', function (req, res) {
   var productId = req.params.productId;
   console.log(`GET REQUEST for product ${productId}`);
   database.findOne({productId: productId}, (err, productData) => {
-    if(err) {
+    if (err) {
       console.log("ERROR:", err);
     } else {
       console.log("SUCCESS");
