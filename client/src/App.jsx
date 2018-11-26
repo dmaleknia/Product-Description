@@ -6,7 +6,7 @@ import Features from './components/Features.jsx';
 import TechSpecs from './components/TechSpecs.jsx';
 import normalizePort from 'normalize-port';
 
-var port = normalizePort(process.env.PORT || '8081');
+var port = normalizePort(process.env.PORT || '710');
 
 class Productdescriptions extends React.Component {
   constructor() {
