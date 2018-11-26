@@ -66,7 +66,7 @@ class Productdescriptions extends React.Component {
   render() {
     return(
       <div>
-      <p className="nittyGritty"><strong>Product details</strong></p>
+      <p className="nittyGritty"><strong>Product Details</strong></p>
       <div className="tabs">
       <button id="switchState"
         onClick={() => this.changeView()}>
