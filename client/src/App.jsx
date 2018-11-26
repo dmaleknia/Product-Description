@@ -15,19 +15,18 @@ class Productdescriptions extends React.Component {
   }
 
   componentDidMount() {
-    console.log('COMPONENT MOUNTED');
-    // let id = window.location.pathname.replace(/\/product\//,'') || 1000;
-    let id = 1000;
-      console.log('Here is the id: ', id);
-      axios.get(`/product/data/${id}`)
-        .then(productData =>{
-          this.setState({
-            product: productData.data
-          })
+    let id = window.location.pathname.replace(/\/product\//,'') || 1000;
+    console.log('Here is the id: ', id);
+    // id = 1000;
+    axios.get(`/product/data/${id}`)
+      .then(productData =>{
+        this.setState({
+          product: productData.data
         })
-        .catch(err => {
-          console.log("Error with server side fetch request",err);
-        })
+       })
+      .catch(err => {
+        console.log("Error with server side fetch request",err);
+      })
   }
 
   changeView() {

@@ -41,9 +41,9 @@ app.get('/productdescriptions', function (req, res) {
   });
 });
 
-// app.get('/product/:productId', function (req, res) {
-//   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
-// });
+app.get('/product/:productId', function (req, res) {
+  res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
+});
 
 app.get('/product/data/:productId', function (req, res) {
   let productId = req.params.productId;
