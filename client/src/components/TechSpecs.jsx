@@ -5,7 +5,7 @@ const TechSpecs = ({techSpecs}) => {
   return (
     <div>
       <div className="features">
-        {techSpecs && techSpecs.map(techSpec => <TechSpec techSpec={techSpec} />)}
+        {techSpecs && techSpecs.map((techSpec, index) => <TechSpec key={index} techSpec={techSpec} />)}
       </div>
     </div>
   )

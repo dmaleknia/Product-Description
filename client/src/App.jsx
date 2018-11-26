@@ -15,7 +15,10 @@ class Productdescriptions extends React.Component {
   }
 
   componentDidMount() {
-    let id = window.location.pathname.replace(/\/product\//,'') || 1000;
+    console.log('COMPONENT MOUNTED');
+    // let id = window.location.pathname.replace(/\/product\//,'') || 1000;
+    let id = 1000;
+      console.log('Here is the id: ', id);
       axios.get(`/product/data/${id}`)
         .then(productData =>{
           this.setState({
@@ -51,8 +54,7 @@ class Productdescriptions extends React.Component {
   render() {
     return(
       <div>
-        <div>HERE IS A MESSAGE!</div>
-      <p className="nittyGritty"><strong>Product Details NEWTEST!!!</strong></p>
+      <p className="nittyGritty"><strong>Product Details</strong></p>
       <div className="tabs">
       <button id="switchState"
         onClick={() => this.changeView()}>
