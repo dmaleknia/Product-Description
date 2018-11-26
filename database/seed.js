@@ -134,7 +134,7 @@ const generateProduct = (id = null) => {
 
 const generateSampleData = () => {
   let result = [];
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 20000; i++) {
     result[i] = generateProduct(i);
   }
   return result;
