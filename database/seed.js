@@ -1,4 +1,3 @@
-const db  = require('./index.js');
 const Description  = require('./db.js');
 
 const sampleDescriptions = [
@@ -140,12 +139,8 @@ const generateSampleData = () => {
   return result;
 }
 
-
-
-
 const seedDb = () => {
   Description.create(generateSampleData())
-    //.then(() => db.disconnect());
 };
 
 seedDb();
