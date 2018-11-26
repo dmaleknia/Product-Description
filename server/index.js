@@ -9,7 +9,6 @@ const morgan = require('morgan');
 const port = normalizePort(process.env.PORT || '4001');
 
 const app = express();
-// const port = 710;
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
@@ -30,16 +29,16 @@ app.listen(port, function() {
   console.log(`App listening on port ${port}`);
 });
 
-app.get('/productdescriptions', function (req, res) {
-  console.log("GET REQUEST for product descriptions");
-  database.find({}, (err, data) => {
-    if(err) {
-      console.log("ERROR:", err);
-    } else{
-      res.status(200).send(data);
-    }
-  });
-});
+// app.get('/productdescriptions', function (req, res) {
+//   console.log("GET REQUEST for product descriptions");
+//   database.find({}, (err, data) => {
+//     if(err) {
+//       console.log("ERROR:", err);
+//     } else{
+//       res.status(200).send(data);
+//     }
+//   });
+// });
 
 app.get('/product/:productId', function (req, res) {
   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
