@@ -4,7 +4,6 @@ import axios from 'axios';
 import Features from './components/Features.jsx';
 import TechSpecs from './components/TechSpecs.jsx';
 
-
 class Productdescriptions extends React.Component {
   constructor() {
     super();
@@ -15,7 +14,7 @@ class Productdescriptions extends React.Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     let id = window.location.pathname.replace(/\/product\//,'') || 1000;
       axios.get('/product/data/' + id)
         .then(productData =>{
@@ -27,7 +26,8 @@ class Productdescriptions extends React.Component {
           console.log("Error with server side fetch request",err);
         })
   }
-  changeView(){
+
+  changeView() {
     if(this.state.view === "Features"){
       this.setState({
         view:"TechSpecs"
@@ -47,6 +47,7 @@ class Productdescriptions extends React.Component {
       return <TechSpecs techSpecs={this.state.product.techSpecs}/>
     }
   }
+
   render() {
     return(
       <div>
@@ -61,6 +62,7 @@ class Productdescriptions extends React.Component {
       </div>
     );
   }
+
 }
 
 export default Productdescriptions;
