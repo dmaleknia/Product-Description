@@ -30,30 +30,30 @@ app.listen(port, function() {
   console.log(`App listening on port ${port}`);
 });
 
-app.get('/productdescriptions', function (req, res) {
-  console.log("GET REQUEST for product descriptions");
-  database.find({}, (err, data) => {
-    if(err) {
-      console.log("ERROR:", err);
-    } else{
-      res.status(200).send(data);
-    }
-  });
-});
+// app.get('/productdescriptions', function (req, res) {
+//   console.log("GET REQUEST for product descriptions");
+//   database.find({}, (err, data) => {
+//     if(err) {
+//       console.log("ERROR:", err);
+//     } else{
+//       res.status(200).send(data);
+//     }
+//   });
+// });
 
-app.get('/product/:productId', function (req, res) {
-  res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
-});
+// app.get('/product/:productId', function (req, res) {
+//   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
+// });
 
-app.get('/product/data/:productId', function (req, res) {
-  let productId = req.params.productId;
-  console.log(`GET REQUEST for product ${productId}`);
-  database.findOne({productId: productId}, (err, productData) => {
-    if (err) {
-      console.log("ERROR:", err);
-    } else {
-      console.log("SUCCESS");
-      res.status(200).send(productData);
-    }
-  });
-});
+// app.get('/product/data/:productId', function (req, res) {
+//   let productId = req.params.productId;
+//   console.log(`GET REQUEST for product ${productId}`);
+//   database.findOne({productId: productId}, (err, productData) => {
+//     if (err) {
+//       console.log("ERROR:", err);
+//     } else {
+//       console.log("SUCCESS");
+//       res.status(200).send(productData);
+//     }
+//   });
+// });

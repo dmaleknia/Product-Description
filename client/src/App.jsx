@@ -28,11 +28,11 @@ class Productdescriptions extends React.Component {
   }
 
   changeView() {
-    if(this.state.view === "Features"){
+    if (this.state.view === "Features") {
       this.setState({
         view:"TechSpecs"
       })
-    } else{
+    } else {
       this.setState({
         view:"Features"
       })
@@ -41,10 +41,10 @@ class Productdescriptions extends React.Component {
 
   renderView() {
     const {view} = this.state;
-    if(view === "Features"){
-      return <Features features={this.state.product.features}/>
-    }else if (view === "TechSpecs"){
-      return <TechSpecs techSpecs={this.state.product.techSpecs}/>
+    if (view === "Features") {
+      return <Features features={this.state.product.features} />
+    } else if (view === "TechSpecs") {
+      return <TechSpecs techSpecs={this.state.product.techSpecs} />
     }
   }
 
