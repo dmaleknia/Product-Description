@@ -132,13 +132,19 @@ const generateProduct = (id = null) => {
   return result;
 }
 
-
+const generateSampleData = () => {
+  let result = [];
+  for (let i = 0; i < 10000; i++) {
+    result[i] = generateProduct(i);
+  }
+  return result;
+}
 
 
 
 
 const seedDb = () => {
-  Description.create(sampleData)
+  Description.create(generateSampleData())
     //.then(() => db.disconnect());
 };
 
