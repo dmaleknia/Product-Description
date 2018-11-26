@@ -38,7 +38,7 @@ app.get('/product/:productId', function (req, res) {
 });
 
 app.get('/product/data/:productId', function (req, res) {
-  var productId = req.params.productId;
+  let productId = req.params.productId;
   console.log(`GET REQUEST for product ${productId}`);
   database.findOne({productId: productId}, (err, productData) => {
     if (err) {
