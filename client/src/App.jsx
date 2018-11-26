@@ -19,9 +19,8 @@ class Productdescriptions extends React.Component {
     let id = window.location.pathname.replace(/\/product\//,'');
       axios.get('/product/data/' + id)
         .then(productData =>{
-          let productData = productData.data;
           this.setState({
-            product: productData
+            product: productData.data
           })
         })
         .catch(err => {
