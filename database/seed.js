@@ -1,4 +1,5 @@
 const Description  = require('./db.js');
+const Promise = require('bluebird');
 
 const sampleDescriptions = [
   {
@@ -144,7 +145,17 @@ const generateSampleData = () => {
 // Promise.each()
 // Try some other options: http://bluebirdjs.com/docs/api/promise.each.html
 
+const generateSet = () => {
+  let result = [];
+  for (let i = 0; i < 10000000; i += 10000) {
+    result.push(i);
+  }
+  return result;
+}
+
 const seedDb = () => {
+  const set = generateSet();
+
   Description.create(generateSampleData())
 };
 
