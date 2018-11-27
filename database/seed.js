@@ -131,16 +131,20 @@ const generateProduct = (id = null) => {
   return result;
 }
 
-const generateSampleData = () => {
+const generateSampleData = (n) => {
   let result = [];
-  for (let i = 0; i < 20000; i++) {
+  for (let i = 10000*(n); i < 10000*(n + 1); i++) {
     result[i] = generateProduct(i);
   }
   return result;
 }
 
 const seedDb = () => {
-  Description.create(generateSampleData())
+  for (let i = 0; i < 1000; i++) {
+    setTimeout(() => {
+      Description.create(generateSampleData(i))
+    }, 30000 * i);
+  }
 };
 
 seedDb();
