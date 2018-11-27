@@ -3,3 +3,4 @@ node_modules
 myapp.zip
 config.js
 .env
+*.pem
