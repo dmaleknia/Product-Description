@@ -122,7 +122,7 @@ const randomNumber = () => {
   return Math.floor(Math.random() * sampleDescriptions.length);
 }
 
-const generateProduct = (id = null) => {
+const generateProduct = (id) => {
   let result = {};
   result.productId = id;
   result.productName = sampleDescriptions[randomNumber()].productName;
@@ -131,20 +131,21 @@ const generateProduct = (id = null) => {
   return result;
 }
 
-const generateSampleData = (n) => {
+const generateSampleData = () => {
   let result = [];
-  for (let i = 10000*(n); i < 10000*(n + 1); i++) {
+  for (let i = 0; i < 20000; i++) {
     result[i] = generateProduct(i);
   }
   return result;
 }
 
+// Use the same set of objects over and over instead of storing 10m unique objects in memory
+// Promise-based
+// Promise.each()
+// Try some other options: http://bluebirdjs.com/docs/api/promise.each.html
+
 const seedDb = () => {
-  for (let i = 0; i < 1000; i++) {
-    setTimeout(() => {
-      Description.create(generateSampleData(i))
-    }, 30000 * i);
-  }
+  Description.create(generateSampleData())
 };
 
 seedDb();
